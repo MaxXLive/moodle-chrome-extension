@@ -3,11 +3,16 @@
     "description": "Extension for Chrome to replace your Curse IDs with actual names",
     "version": "1.0",
     "manifest_version": 3,
+
+	"background": {
+		"service_worker": "background.js"
+	},
 	
 	"content_scripts": [{
 		"css": ["style.css"],
 		"js": ["content.js"],
-		"matches": ["https://elearning.dhbw-stuttgart.de/moodle/*"]
+		"matches": ["https://elearning.dhbw-stuttgart.de/moodle/*"],
+		"all_frames": true
 	}],
 	"action": {
 		"default_popup": "popup.html",
@@ -19,6 +24,6 @@
 		}
 	},
 	"permissions": [
-		"storage"
+		"storage", "contextMenus", "tabs"
 	]
 }

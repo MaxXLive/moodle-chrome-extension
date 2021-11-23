@@ -13,7 +13,6 @@ function addToHideList(){
         hiddenList.push(text);
         chrome.storage.local.set({hidden: hiddenList});
     }else{
-        console.log('set new');
         chrome.storage.local.set({hidden: [text]});
     }
     document.getElementById('name_text').value = '';
